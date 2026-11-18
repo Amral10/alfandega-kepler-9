@@ -1,0 +1,27 @@
+{
+  "name": "alfandega-kepler-9",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "check": "tsc --noEmit",
+    "build": "npm run check && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --import ./tests/register.mjs --test tests/*.test.ts",
+    "verify:build": "node scripts/verify-build.mjs",
+    "package": "npm run build && npm run verify:build && python3 scripts/package.py"
+  },
+  "dependencies": {
+    "sql.js": "1.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.43",
+    "@types/sql.js": "1.4.11",
+    "typescript": "5.9.3",
+    "vite": "8.3.8"
+  }
+}

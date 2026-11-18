@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b151c" />
+    <meta name="description" content="Aprenda SQL no posto de fiscalização espacial Alfândega Kepler-9." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Alfândega Kepler-9 · Posto de fiscalização</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <div id="app"></div>
+    <dialog id="ajuda" aria-labelledby="titulo-ajuda">
+      <div class="dialog-heading"><span class="eyebrow">MANUAL DO OPERADOR</span><button id="fechar-ajuda" aria-label="Fechar ajuda">Fechar ×</button></div>
+      <h2 id="titulo-ajuda">Seu primeiro contato com o terminal</h2>
+      <p>SQL é a linguagem usada para conversar com um banco de dados. Escreva uma consulta e selecione <strong>Executar SQL</strong> para ver a resposta.</p>
+      <pre><code>SELECT nome, especie, destino
+FROM viajantes
+WHERE origem = 'Terra';</code></pre>
+      <p><code>SELECT</code> escolhe as colunas, <code>FROM</code> indica a tabela e <code>WHERE</code> filtra os registros.</p>
+      <p>Use <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (ou <kbd>⌘</kbd> + <kbd>Enter</kbd>) no editor para executar. Cada execução exibe até 200 linhas, compartilhadas entre seus resultados. Consultas acima de 5 segundos são interrompidas.</p>
+      <p>Na demonstração você pode alterar os dados. Reiniciar restaura o banco original. Cancelar uma consulta preserva a última execução concluída. Seu progresso é salvo neste navegador; o relógio continua correndo ao sair ou recarregar.</p>
+      <p>O nível fácil ensina a criar e consultar um banco vazio. Use os exemplos de cada tarefa e o glossário do terminal. A demonstração permanece disponível para explorar um banco pronto. O nível médio já permite fiscalizar viajantes, registrar rascunhos por SQL e confirmar decisões. Os cadastros são somente leitura; apenas rascunhos do viajante atual podem ser alterados. O nível avançado exige junções, agrupamentos e distinção. O resumo da campanha reúne seus resultados.</p>
+    </dialog>
+    <dialog id="reiniciar-campanha" aria-labelledby="titulo-reinicio"><h2 id="titulo-reinicio">Reiniciar toda a campanha?</h2><p>Isso encerra o turno e apaga os bancos salvos, os resultados e a conclusão dos três níveis neste navegador.</p><div class="hero-actions"><button class="secondary" id="cancelar-reinicio">Manter meu progresso</button><button class="primary" id="confirmar-reinicio">Apagar e começar de novo</button></div></dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
